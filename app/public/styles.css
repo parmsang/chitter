@@ -1,0 +1,40 @@
+body {
+  background-color: black;
+  background-image: url('/images/birds.jpg');
+  background-attachment: fixed;
+  font-family: 'Century Gothic', Verdana;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+  width: 100%;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.menubar {
+  z-index: 1;
+  padding-top: 15px;
+  width: 100%;
+  height: 40px;
+  background-color: #34495e;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: right;
+}
+
+#signin {
+  float: right;
+  padding-right: 5px;
+}
+
+h1 {
+  color: #903;
+  font: 32px/1 Helvetica, Arial, sans-serif;
+  font-size: 40px;
+}
+
+p {
+  font: 13px/1.4 Helvetica, Arial, sans-serif;
+}

@@ -76,10 +76,10 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps' do
-    timestamp = Time.now.strftime('%Y-%m-%d_%H-%M-%S')
+    #timestamp = Time.now.strftime('%Y-%m-%d_%H-%M-%S')
     @peep = Peep.new(user_id: params[:user_id],
                      text: params[:text],
-                     timestamp: timestamp)
+                     timestamp: Time.now)
     if @peep != "" && !session[:user_id].nil?
       @peep.save
       redirect to('/peeps')

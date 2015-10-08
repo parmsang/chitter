@@ -5,17 +5,19 @@
 <head>
   <title><%= title %></title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+  <div class="menubar">
   <% if current_user %>
     Welcome,
     <%= current_user.email %>
-      <form method='post' action='/sessions'>
+      <form id="signin" method='post' action='/sessions'>
         <input type='hidden' name='_method' value='delete'>
         <input type='submit' value='Sign out'>
       </form>
+  </div>
       <% end %>
         <% if flash[:notice] %>
           <div id='notice'>

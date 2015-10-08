@@ -10,7 +10,7 @@ feature 'Creating Peeps' do
     visit '/peeps/new_peep'
     fill_in 'text', with: 'peep message'
     click_button 'Submit peep'
-    expect(Peep.count).to eq(1)
+    expect(Peep.count).to eq(1)  #better to expect a peep message -- because BDD!
   end
 
   scenario 'can only peep if logged in' do

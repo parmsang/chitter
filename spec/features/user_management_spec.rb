@@ -27,7 +27,7 @@ end
 feature 'User logs in' do
 
   let(:user) do
-    user = create :user
+    create :user
   end
 
   scenario 'with correct credentials' do
@@ -40,7 +40,7 @@ end
 feature 'User signs out' do
 
   let(:user) do
-    user = create :user
+    create :user
   end
 
   scenario 'while being signed in' do
