@@ -2,42 +2,41 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title><%= title %></title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="/styles.css">
-</head>
+  <head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <link href="/styles.css" rel="stylesheet">
+  </head>
 
-<body>
-  <div class="menubar">
-  <% if current_user %>
-    Welcome,
-    <%= current_user.email %>
-      <form id="signin" method='post' action='/sessions'>
-        <input type='hidden' name='_method' value='delete'>
-        <input type='submit' value='Sign out'>
+  <body>
+    <div class="menubar">
+      <% if current_user %>
+      <form action='/sessions' id="signin" method='post'>
+        <input name='_method' type='hidden' value='delete'>
+        <input class="button" type='submit' value='Sign out'>
       </form>
-  </div>
+      <div id="welcome"> Welcome, <%= current_user.email %> </div>
       <% end %>
-        <% if flash[:notice] %>
-          <div id='notice'>
-            <%= flash[:notice] %>
-          </div>
-          <% end %>
-            <% if flash[:errors] && !flash[:errors].empty? %>
-              Please refer to the following errors below:
-              <ul id='errors'>
-                <% flash[:errors].each do |error| %>
-                  <li>
-                    <%= error %>
-                  </li>
-                  <% end %>
-              </ul>
-              <% end %>
-                <br>
-                <%= yield %>
-</body>
-<br>
-<a href="/">Go to Home Page</a>
+    </div>
+    <% if flash[:notice] %>
+    <div id='notice'>
+      <%= flash[:notice] %>
+    </div>
+    <% end %>
+    <% if flash[:errors] && !flash[:errors].empty? %>
+    Please refer to the following errors below:
+    <ul id='errors'>
+      <% flash[:errors].each do |error| %>
+      <li>
+        <%= error %>
+      </li>
+      <% end %>
+    </ul>
+    <% end %>
+    <br>
+    <%= yield %>
+  </body>
+  <br>
+  <a href="/">Go to Home Page</a>
 
 </html>
