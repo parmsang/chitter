@@ -36,11 +36,29 @@ body {
   padding-right: 5px;
 }
 
-
 #logo {
   text-decoration: none;
   padding-left: 10px;
   position: absolute;
+}
+
+#left_container {
+  margin: 0px auto;
+  width: 60%;
+  line-height: 2em;
+}
+
+#intro_text {
+  font-size: 50%;
+  line-height: 1.5em;
+}
+
+#intro {
+  float: left;
+  padding: 25px;
+  width: 40%;
+  font-size: 200%;
+  text-align: left;
 }
 
 a img {
@@ -82,7 +100,7 @@ a img {
 }
 
 .container {
-  margin: 0px auto;
+  margin: 24px auto;
   width: 0px;
 }
 

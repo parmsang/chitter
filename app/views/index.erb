@@ -1,9 +1,37 @@
-<h1>Chitter!</h1>
+<div id="left_container">
+  <div id=intro >Welcome to Chitter!
+    <br><br>
+    <p id=intro_text >Connect with your friends — and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle.</p>
+  </div>
+</div>
 
-<div>
   <% if !current_user %>
-  
-  <a href="/users/new">Sign up</a><br>
+
+<div class="container">
+  <div class="login">
+    <div id=login_message>Log in to Chitter</div>
+    <form action='/sessions' method='post'>
+      <p><input name='email' placeholder="Email*" type='text'></p>
+      <p><input name='password' placeholder='Password*' type='password'></p>
+      <p><input type='submit' value='Log in to Chitter!'></p>
+    </form>
+  </div>
+  <br>
+  <div class="login">
+    <div id=login_message>New to Chitter? Sign up</div>
+    <form action='/' method='post'>
+      <p><input name='first_name' placeholder='First Name*' type='text'></p>
+      <p><input name='last_name' placeholder='Last Name*' type='text'></p>
+      <p><input name='username' placeholder='Username*' type='text'></p>
+      <p><input name='email' placeholder="Email*" type='text' value='<%= @user.email %>'></p>
+      <p><input name='password' placeholder='Password*' type='password'></p>
+      <p><input type='submit' value='Sign up for Chitter!'></p>
+    </form>
+  </div>
+</div>
+
+
+  <a href="/users/new" >Sign up</a><br>
   <a href="/sessions/new">Sign in</a><br>
   <% end %>
   <a href="/peeps/new_peep">Peep new message</a><br>
