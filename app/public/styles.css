@@ -17,8 +17,8 @@ body {
   z-index: 1;
   padding-top: 15px;
   width: 100%;
-  height: 80px;
-  background:rgba(0,0,0,0.0);
+  height: 20px;
+  background:rgba(0,0,0,0.3);
   display: block;
   position: fixed;
   top: 0;
@@ -36,6 +36,33 @@ body {
   padding-right: 5px;
 }
 
+
+#logo {
+  text-decoration: none;
+  padding-left: 10px;
+  position: absolute;
+}
+
+a img {
+  text-decoration: none;
+  position: absolute;
+  top: -15px;
+  left: 0px;
+  width:30px; /* you can use % */
+  height: auto;
+}
+
+#menu_link {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
 .button {
   border: none;
 	background: rgba(0,0,0,0);
@@ -49,8 +76,9 @@ body {
 	transition: all 500ms ease;
 }
 
+.button:active,
 .button:hover {
-  background: rgba(0,0,0,0.05);
+  background: rgba(0,0,0,0.08);
 }
 
 h1 {
