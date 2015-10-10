@@ -81,12 +81,66 @@ a img {
   background: rgba(0,0,0,0.08);
 }
 
-h1 {
-  color: #903;
-  font: 32px/1 Helvetica, Arial, sans-serif;
-  font-size: 40px;
+.container {
+  margin: 0px auto;
+  width: 0px;
 }
 
-p {
-  font: 13px/1.4 Helvetica, Arial, sans-serif;
+.login {
+  position: relative;
+  margin: 0 auto;
+  padding: 5px 5px 5px;
+  width: 240px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px 3px #D6D8D7;
+}
+
+
+  #login_message {
+    margin: -5px -5px 7px;
+    line-height: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    text-shadow: 0 1px white;
+    background: #white;
+    border-bottom: 1px solid #cfcfcf;
+    border-radius: 3px 3px 0 0;
+  }
+
+p { margin: 7px 0 0; }
+ p:first-child { margin-top: 0; }
+
+input[type=text], input[type=password] {
+  margin: 0px;
+  padding: 0 10px;
+  font-size: 10px;
+  width: 200px;
+  height: 20px;
+  color: #404040;
+  background: white;
+  border: 0px solid;
+  border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+  border-radius: 2px;
+  outline: 3px solid #eff4f7;
+}
+
+input:focus {
+  outline-color: #dceefc;
+}
+
+input[type=submit] {
+  padding: 0 18px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #527881;
+  text-shadow: 0 1px #e3f1f1;
+  background: #cde5ef;
+  border: 1px solid;
+  border-color: #b4ccce #b3c0c8 #9eb9c2;
+  border-radius: 16px;
+  outline: 0;
 }
