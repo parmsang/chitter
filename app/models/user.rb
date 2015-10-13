@@ -8,7 +8,6 @@ class User
 
   property :id, Serial
   property :email, String, required: true, unique: true
-  property :password, String, required: true
   property :first_name, String # , required: true
   property :last_name, String # , required: true
   property :username, String, required: true, unique: true

@@ -11,11 +11,11 @@ Cucumber::Rake::Task.new :cuke
 task default: [:cop, :spec, :cuke]
 
 task :auto_upgrade do
-  DataMapper.auto.upgrade!
+  DataMapper.auto_upgrade!
   puts "Auto upgrade completed"
 end
 
 # task :auto_migrate do
-#   DataMapper.auto.migrate!
+#   DataMapper.auto_migrate!
 #   puts "Auto migrate completed"
 # end

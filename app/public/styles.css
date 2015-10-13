@@ -175,3 +175,17 @@ input[type=submit] {
   opacity: .8;
   overflow: hidden;
 }
+
+#trash_icon {
+  float: right;
+  position: relative;
+  display: inline-block;
+  margin-right:2em
+}
+#edit_icon {
+  float: right;
+  position: relative;
+  display: inline-block;
+  margin-right:4em
+
+}
