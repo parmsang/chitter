@@ -36,11 +36,7 @@ body {
   padding-right: 5px;
 }
 
-#logo {
-  text-decoration: none;
-  padding-left: 10px;
-  position: absolute;
-}
+
 
 #left_container {
   margin: 0px auto;
@@ -61,12 +57,12 @@ body {
   text-align: left;
 }
 
-a img {
+#logo {
   text-decoration: none;
   position: absolute;
-  top: -15px;
+  top: 0px;
   left: 0px;
-  width:30px; /* you can use % */
+  width:30px;
   height: auto;
 }
 
@@ -114,19 +110,18 @@ a img {
   box-shadow: 0px 0px 4px 3px #D6D8D7;
 }
 
-
-  #login_message {
-    margin: -5px -5px 7px;
-    line-height: 30px;
-    font-size: 13px;
-    font-weight: bold;
-    color: #555;
-    text-align: center;
-    text-shadow: 0 1px white;
-    background: #white;
-    border-bottom: 1px solid #cfcfcf;
-    border-radius: 3px 3px 0 0;
-  }
+#login_message {
+  margin: -5px -5px 7px;
+  line-height: 30px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  text-shadow: 0 1px white;
+  background: #white;
+  border-bottom: 1px solid #cfcfcf;
+  border-radius: 3px 3px 0 0;
+}
 
 p { margin: 7px 0 0; }
  p:first-child { margin-top: 0; }
@@ -149,7 +144,7 @@ input:focus {
   outline-color: #dceefc;
 }
 
-input[type=submit] {
+#login_button {
   padding: 0 18px;
   height: 20px;
   font-size: 12px;
@@ -176,19 +171,22 @@ input[type=submit] {
   overflow: hidden;
 }
 
+#peep_text {
+  font-size: 12px;
+  margin-left: -20px;
+  width: 70%;
+}
+
 #trash_icon {
   float: right;
   position: relative;
   display: inline-block;
-  margin-right:2em
-  cursor: pointer;
-  width: 3%;
+  margin-right:0em
 }
 
 #edit_icon {
   float: right;
   position: relative;
   display: inline-block;
-  margin-right:4em
-  cursor: pointer;
+  margin-right:0.2em
 }

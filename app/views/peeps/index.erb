@@ -4,27 +4,20 @@
 
 <ul id="peeps">
   <% @peeps.reverse_each do |peep| %>
+  <section id="peep_text">Posted by: <%= peep.user.username %> (<%= peep.timestamp.strftime("%d/%m/%Y") %> at <%= peep.timestamp.strftime("%H:%M") %>)</section>
   <li id="peep">
-    Peep:
     <%= peep.text %><br>
-    By:
-    <%= peep.user.first_name %>
-    <%= peep.user.last_name %><br>
-    Handle:
-    <%= peep.user.username %><br>
-    Posted:
-    <%= peep.timestamp %></div>
-
-    <div id="edit_icon"><a href="/"><img src="images/edit.png"></a></div>
 
     <% if current_user == peep.user %>
       <td>
         <form action="/peeps/<%= peep.id %>" method="post">
           <input name="_method" type="hidden" value="delete">
-          <input id="trash_icon" type="image" src="images/trash.png" value="Delete Peep">
+          <input id="trash_icon" type="image" width="20px" src="images/trash.png" value="Delete Peep">
         </form>
+        <div id="edit_icon"><a href="/"><img width="20px" src="images/edit.png"></a></div>
       </td>
     <% end %>
+
   </li>
 <% end %>
 </ul>

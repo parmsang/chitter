@@ -13,7 +13,7 @@
     <form action='/sessions' method='post'>
       <p><input name='email' placeholder="Email*" type='text'></p>
       <p><input name='password' placeholder='Password*' type='password'></p>
-      <p><input type='submit' value='Log in to Chitter!'></p>
+      <p><input type='submit' id="login_button" value='Log in to Chitter!'></p>
     </form>
   </div>
   <br>
@@ -25,7 +25,7 @@
       <p><input name='username' placeholder='Username*' type='text'></p>
       <p><input name='email' placeholder="Email*" type='text' value='<%= @user.email %>'></p>
       <p><input name='password' placeholder='Password*' type='password'></p>
-      <p><input type='submit' value='Sign up for Chitter!'></p>
+      <p><input type='submit' id="login_button" value='Sign up for Chitter!'></p>
     </form>
   </div>
 </div>

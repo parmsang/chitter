@@ -6,7 +6,7 @@ feature 'User sign up' do
 
   scenario 'can sign up for Chitter' do
     expect { sign_up(user) }.to change(User, :count).by(1)
-    expect(page).to have_content('Welcome, sam@makersacademy.com')
+    expect(page).to have_content('Welcome, tansaku')
     expect(User.first.email).to eq('sam@makersacademy.com')
   end
 
@@ -32,7 +32,7 @@ feature 'User logs in' do
 
   scenario 'with correct credentials' do
     sign_in(email: user.email,   password: user.password)
-    expect(page).to have_content "Welcome, #{user.email}"
+    expect(page).to have_content "Welcome, #{user.username}"
   end
 
 end
