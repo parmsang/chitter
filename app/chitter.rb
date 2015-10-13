@@ -92,6 +92,13 @@ class Chitter < Sinatra::Base
     end
   end
 
+    delete '/peeps/:id' do
+      @peep = Peep.get(params[:id])
+      @peep.destroy
+      flash[:success] = 'Peep deleted!'
+      redirect to('/peeps')
+    end
+
   # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME
 

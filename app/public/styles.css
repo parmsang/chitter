@@ -181,11 +181,14 @@ input[type=submit] {
   position: relative;
   display: inline-block;
   margin-right:2em
+  cursor: pointer;
+  width: 3%;
 }
+
 #edit_icon {
   float: right;
   position: relative;
   display: inline-block;
   margin-right:4em
-
+  cursor: pointer;
 }
