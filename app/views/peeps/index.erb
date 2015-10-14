@@ -1,14 +1,16 @@
 
 <h3>Peeps</h3>
 
-<div>
-  <form action='/peeps' method='POST'>
-    Peep now!
-    <textarea id="peep_text_area" name="text"></textarea>
-    <input name='user_id' type='hidden' value="<%= session[:user_id] %>">
-    <input id="peep_button" type='submit' value='Submit Peep'>
-  </form>
-</div>
+<% if current_user %>
+  <div>
+    <form action='/peeps' method='POST'>
+      Peep now!
+      <textarea id="peep_text_area" name="text"></textarea>
+      <input name='user_id' type='hidden' value="<%= session[:user_id] %>">
+      <input id="peep_button" type='submit' value='Submit Peep'>
+    </form>
+  </div>
+<% end %>
 
 <ul id="peeps">
   <% @peeps.reverse_each do |peep| %>

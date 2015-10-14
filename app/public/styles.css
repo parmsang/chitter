@@ -27,13 +27,16 @@ body {
 }
 
 #welcome {
-  float: right;
-  padding-right: 5px;
+  position: absolute;
+  top: 5px;
+  right: 90px;
 }
 
 #signin {
-  float: right;
-  padding-right: 5px;
+  position: absolute;
+  top: 2px;
+  right: 0px;
+
 }
 
 #left_container {
