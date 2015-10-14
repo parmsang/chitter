@@ -2,7 +2,7 @@ body {
   background-image: url('/images/friends.jpg');
   background-size:   cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center -60px;
   background-attachment: fixed;
   font-family: 'Century Gothic', Verdana;
   font-size: 16px;
@@ -67,8 +67,23 @@ body {
   height: auto;
 }
 
-#logo_2 {
+#footer {
+  z-index: 1;
+  padding-top: 15px;
+  width: 100%;
+  height: 15px;
+  background-color: #7f8378;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
 
+#footer .copyright {
+  position: relative;
+  bottom: 12px;
+  text-align: center;
+  font-size: 10px;
 }
 
 #menu_link {
@@ -184,7 +199,6 @@ input:focus {
   overflow: hidden;
 }
 
-
 #peep_text {
   font-size: 12px;
   float: left
@@ -219,7 +233,6 @@ input:focus {
   position: relative;
   display: inline-block;
   text-align: center;
-
 }
 
 #peep_text_area {
