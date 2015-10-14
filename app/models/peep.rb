@@ -6,7 +6,7 @@ class Peep
   include DataMapper::Resource
 
   property :id,        Serial
-  property :text,      String, required: true
+  property :text,      Text, required: true
   property :timestamp, DateTime, required: true
 
   belongs_to :user

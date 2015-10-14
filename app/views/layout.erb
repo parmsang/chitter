@@ -20,8 +20,8 @@
       </form>
       <div id="welcome"> Welcome, <%= current_user.username %> </div>
       <% elsif !current_user %>
-        <div id="logo"><a href="/"><img width="30px" src="/images/bird.png"></a></div>
-        <a id="menu_link" href="/">home</a><br>
+        <div id="logo"><a href="/"><img width="30px" src="/images/logo.png"></a></div>
+        <a id="menu_link" href="/">Chitter</a><br>
       <% end %>
     </div>
     <% if flash[:notice] %>
