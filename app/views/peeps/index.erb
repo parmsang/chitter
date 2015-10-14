@@ -1,6 +1,14 @@
 
 <h2>Peeps</h2>
 
+<div>
+  <form action='/peeps' method='POST'>
+    peep message:
+    <textarea name="text"></textarea>
+    <input name='user_id' type='hidden' value="<%= session[:user_id] %>">
+    <input type='submit' value='Submit peep'>
+  </form>
+</div>
 
 <ul id="peeps">
   <% @peeps.reverse_each do |peep| %>
@@ -16,6 +24,7 @@
           <form action="/peeps/<%= peep.id %>" method="get">
             <input id="edit_icon" type="image" width="20px" src="images/edit.png" value="Edit Peep">
           </form>
+          <input type='submit' id="login_button" value='Comments'>
         </td>
       <% end %>
     </li>
