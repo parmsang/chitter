@@ -98,13 +98,6 @@ body {
   font-family: 'Lobster', cursive;
 }
 
-#chitter_title {
-  font-size: 50px;
-  padding-bottom: 30px;
-  font-family: 'Lobster', cursive;
-  display: inline-block;
-}
-
 .button {
   border: none;
 	background: rgba(0,0,0,0);
@@ -222,9 +215,20 @@ input:focus {
   display: inline-block;
   margin-right:0.2em
 }
+
+#chitter_header {
+}
+
+#chitter_title {
+  font-size: 50px;
+  padding-bottom: 30px;
+  font-family: 'Lobster', cursive;
+  display: inline-block;
+}
+
 #new_container {
   margin: 0 auto;
-  margin-left:3em;
+  margin-left:2.5em;
   padding-bottom: 5px;
 }
 

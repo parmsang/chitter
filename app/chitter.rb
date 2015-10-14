@@ -2,6 +2,7 @@ require 'sinatra/base'
 require_relative "../data_mapper_setup"
 require_relative "./models/user"
 require_relative "./models/peep"
+require_relative "./controllers/peeps"
 require 'sinatra/session'
 require 'sinatra/flash'
 
@@ -70,10 +71,6 @@ class Chitter < Sinatra::Base
     erb :'peeps/index'
   end
 
-  get '/peeps/new_peep' do
-    erb :'peeps/new_peep'
-  end
-
   post '/peeps' do
     @peep = Peep.new(user_id: params[:user_id],
                      text: params[:text],
@@ -85,7 +82,7 @@ class Chitter < Sinatra::Base
       flash.now[:errors] = ['Please log in or register to create a peep']
     else
       flash.now[:errors] = @peep.errors.full_messages
-      erb :'peeps/new_peep'
+      erb :'peeps/index'
     end
   end
 
@@ -105,7 +102,6 @@ class Chitter < Sinatra::Base
       flash[:success] = 'Peep updated!'
       redirect to('/peeps')
     end
-
   end
 
   delete '/peeps/:id' do
@@ -114,6 +110,8 @@ class Chitter < Sinatra::Base
     flash[:success] = 'Peep deleted!'
     redirect to('/peeps')
   end
+
+#comments
 
   # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME

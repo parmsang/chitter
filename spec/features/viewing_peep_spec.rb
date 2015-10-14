@@ -6,9 +6,9 @@ feature 'Viewing peeps' do
 
   scenario 'User can see existing peeps on the peeps page' do
     sign_in(email: user.email,   password: user.password)
-    visit '/peeps/new_peep'
+    visit '/peeps'
     fill_in 'text', with: 'peep message'
-    click_button 'Submit peep'
+    click_button 'Submit Peep'
     visit '/peeps'
     expect(page.status_code).to eq 200
     within 'ul#peeps' do
@@ -18,12 +18,12 @@ feature 'Viewing peeps' do
 
   scenario 'User can view all peeps in reverse chronolgical order' do
     sign_in(email: user.email,   password: user.password)
-    visit '/peeps/new_peep'
+    visit '/peeps'
     fill_in 'text', with: 'first message'
-    click_button 'Submit peep'
-    visit '/peeps/new_peep'
+    click_button 'Submit Peep'
+    visit '/peeps'
     fill_in 'text', with: 'second message'
-    click_button 'Submit peep'
+    click_button 'Submit Peep'
     expect(Peep.count).to eq(2)
     visit '/peeps'
     expect(page.status_code).to eq 200

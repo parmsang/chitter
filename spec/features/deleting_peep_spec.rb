@@ -6,9 +6,9 @@ feature 'Deleting peeps' do
 
   scenario 'can delete a peep when logged in to Chitter' do
     sign_in(email: user.email,   password: user.password)
-    visit '/peeps/new_peep'
+    visit '/peeps'
     fill_in 'text', with: 'peep message'
-    click_button 'Submit peep'
+    click_button 'Submit Peep'
     expect(page).to have_content('peep message')
     find("#trash_icon").click
     expect(page).not_to have_content('peep message')
