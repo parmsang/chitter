@@ -29,8 +29,10 @@
           <form action="/peeps/<%= peep.id %>" method="get">
             <input id="edit_icon" type="image" width="20px" src="images/edit.png" value="Edit Peep">
           </form>
-          <section id="peep_text">Posted by: <%= peep.user.username %> (<%= peep.timestamp.strftime("%d/%m/%Y") %> at <%= peep.timestamp.strftime("%H:%M") %>)</section>
-          <!-- <input type='submit' id="comments_button" value='Comments'> -->
+          <div id="peep_text">
+            Posted by: <%= peep.user.username %> (<%= peep.timestamp.strftime("%d/%m/%Y") %> at <%= peep.timestamp.strftime("%H:%M") %>)
+            <a href="/peeps/<%= peep.id %>/comments">comments</a>
+          </div>
         </td>
       <% end %>
     </li>
