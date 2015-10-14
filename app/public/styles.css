@@ -2,7 +2,7 @@ body {
   background-image: url('/images/friends.jpg');
   background-size:   cover;
   background-repeat: no-repeat;
-  background-position: center -60px;
+  background-position: center center;
   background-attachment: fixed;
   font-family: 'Century Gothic', Verdana;
   font-size: 16px;
@@ -187,16 +187,21 @@ input:focus {
 }
 
 #peep {
-  margin: 0px auto;
   background-color: #7f8378;
+  margin: 0px auto;
   border-radius: 10px;
   padding: 10px;
   width: 70%;
+  max-width: 580px;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
   color: white;
   opacity: .8;
   overflow: hidden;
+}
+
+#peep_text_main {
+  margin-bottom: 10px;
 }
 
 #peep_text {
@@ -217,26 +222,15 @@ input:focus {
   display: inline-block;
   margin-right:0.2em
 }
-
-#comments_button {
-  padding: 0 18px;
-  height: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #527881;
-  text-shadow: 0 1px #e3f1f1;
-  background: #cde5ef;
-  border: 1px solid;
-  border-color: #b4ccce #b3c0c8 #9eb9c2;
-  border-radius: 16px;
-  outline: 0;
-  position: relative;
-  display: inline-block;
-  text-align: center;
+#new_container {
+  margin: 0 auto;
+  margin-left:3em;
+  padding-bottom: 5px;
 }
 
 #peep_text_area {
   width: 40%;
+  max-width: 400px;
   display: inline-block;
   vertical-align: middle;
 }
