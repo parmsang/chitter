@@ -36,8 +36,6 @@ body {
   padding-right: 5px;
 }
 
-
-
 #left_container {
   margin: 0px auto;
   width: 60%;
@@ -171,10 +169,10 @@ input:focus {
   overflow: hidden;
 }
 
+
 #peep_text {
   font-size: 12px;
-  margin-left: -20px;
-  width: 70%;
+  float: left
 }
 
 #trash_icon {
@@ -189,4 +187,43 @@ input:focus {
   position: relative;
   display: inline-block;
   margin-right:0.2em
+}
+
+#comments_button {
+  padding: 0 18px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #527881;
+  text-shadow: 0 1px #e3f1f1;
+  background: #cde5ef;
+  border: 1px solid;
+  border-color: #b4ccce #b3c0c8 #9eb9c2;
+  border-radius: 16px;
+  outline: 0;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+
+}
+
+#peep_text_area {
+  width: 40%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#peep_button {
+  padding: 0 18px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #527881;
+  text-shadow: 0 1px #e3f1f1;
+  background: #cde5ef;
+  border: 1px solid;
+  border-color: #b4ccce #b3c0c8 #9eb9c2;
+  border-radius: 16px;
+  outline: 0;
+  display: inline-block;
 }

@@ -1,18 +1,17 @@
 
-<h2>Peeps</h2>
+<h3>Peeps</h3>
 
 <div>
   <form action='/peeps' method='POST'>
-    peep message:
-    <textarea name="text"></textarea>
+    Peep now!
+    <textarea id="peep_text_area" name="text"></textarea>
     <input name='user_id' type='hidden' value="<%= session[:user_id] %>">
-    <input type='submit' value='Submit peep'>
+    <input id="peep_button" type='submit' value='Submit Peep'>
   </form>
 </div>
 
 <ul id="peeps">
   <% @peeps.reverse_each do |peep| %>
-    Posted by: <%= peep.user.username %> (<%= peep.timestamp.strftime("%d/%m/%Y") %> at <%= peep.timestamp.strftime("%H:%M") %>)
     <li id="peep">
       <%= peep.text %><br>
       <% if current_user == peep.user %>
@@ -24,12 +23,10 @@
           <form action="/peeps/<%= peep.id %>" method="get">
             <input id="edit_icon" type="image" width="20px" src="images/edit.png" value="Edit Peep">
           </form>
-          <input type='submit' id="login_button" value='Comments'>
+          <section id="peep_text">Posted by: <%= peep.user.username %> (<%= peep.timestamp.strftime("%d/%m/%Y") %> at <%= peep.timestamp.strftime("%H:%M") %>)</section>
+          <!-- <input type='submit' id="comments_button" value='Comments'> -->
         </td>
       <% end %>
     </li>
   <% end %>
 </ul>
-<h1>
-  Peeps
-</h1>
