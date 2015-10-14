@@ -24,6 +24,10 @@
     <div id='notice'>
       <%= flash[:notice] %>
     </div>
+    <% elsif flash[:success] %>
+    <div id='notice'>
+      <%= flash[:success] %>
+    </div>
     <% end %>
     <% if flash[:errors] && !flash[:errors].empty? %>
     Please refer to the following errors below:

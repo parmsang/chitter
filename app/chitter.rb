@@ -45,7 +45,6 @@ class Chitter < Sinatra::Base
   end
 
   get '/sessions/new' do
-    # session.clear
     erb :'sessions/new'
   end
 
@@ -72,12 +71,10 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps/new_peep' do
-    # @peep = Peep.new
     erb :'peeps/new_peep'
   end
 
   post '/peeps' do
-    #timestamp = Time.now.strftime('%Y-%m-%d_%H-%M-%S')
     @peep = Peep.new(user_id: params[:user_id],
                      text: params[:text],
                      timestamp: Time.now)
@@ -92,12 +89,31 @@ class Chitter < Sinatra::Base
     end
   end
 
-    delete '/peeps/:id' do
-      @peep = Peep.get(params[:id])
-      @peep.destroy
-      flash[:success] = 'Peep deleted!'
+  get '/peeps/:id' do
+    @peep = Peep.get(params[:id])
+    erb :'peeps/edit_peep'
+  end
+
+  put '/peeps/:id' do
+    @peep = Peep.get(params[:id])
+    peep_text = params[:text]
+    if peep_text.empty?
+      flash.now[:errors] = ['You cannot submit an empty peep']
+      erb :'peeps/edit_peep'
+    else
+      @peep.update(text: params[:text])
+      flash[:success] = 'Peep updated!'
       redirect to('/peeps')
     end
+
+  end
+
+  delete '/peeps/:id' do
+    @peep = Peep.get(params[:id])
+    @peep.destroy
+    flash[:success] = 'Peep deleted!'
+    redirect to('/peeps')
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME

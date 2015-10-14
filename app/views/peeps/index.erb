@@ -4,20 +4,23 @@
 
 <ul id="peeps">
   <% @peeps.reverse_each do |peep| %>
-  <section id="peep_text">Posted by: <%= peep.user.username %> (<%= peep.timestamp.strftime("%d/%m/%Y") %> at <%= peep.timestamp.strftime("%H:%M") %>)</section>
-  <li id="peep">
-    <%= peep.text %><br>
-
-    <% if current_user == peep.user %>
-      <td>
-        <form action="/peeps/<%= peep.id %>" method="post">
-          <input name="_method" type="hidden" value="delete">
-          <input id="trash_icon" type="image" width="20px" src="images/trash.png" value="Delete Peep">
-        </form>
-        <div id="edit_icon"><a href="/"><img width="20px" src="images/edit.png"></a></div>
-      </td>
-    <% end %>
-
-  </li>
-<% end %>
+    Posted by: <%= peep.user.username %> (<%= peep.timestamp.strftime("%d/%m/%Y") %> at <%= peep.timestamp.strftime("%H:%M") %>)
+    <li id="peep">
+      <%= peep.text %><br>
+      <% if current_user == peep.user %>
+        <td>
+          <form action="/peeps/<%= peep.id %>" method="post">
+            <input name="_method" type="hidden" value="delete">
+            <input id="trash_icon" type="image" width="20px" src="images/trash.png" value="Delete Peep">
+          </form>
+          <form action="/peeps/<%= peep.id %>" method="get">
+            <input id="edit_icon" type="image" width="20px" src="images/edit.png" value="Edit Peep">
+          </form>
+        </td>
+      <% end %>
+    </li>
+  <% end %>
 </ul>
+<h1>
+  Peeps
+</h1>
