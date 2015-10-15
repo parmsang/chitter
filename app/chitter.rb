@@ -142,21 +142,22 @@ post '/comments/:id' do
 end
 
 get '/comments/:id/edit' do
-  @comment = Comment.get(params[:id])
+  @id = "#{params[:id]}".to_i
+  @comment = Comment.get(@id)
   erb :'comments/edit_comment'
 end
 
-put '/comments/:id' do
+put '/comments/:id/edit' do
   @comment = Comment.get(params[:id])
   @peep = @comment.peep_id
   comment_text = params[:text]
   if comment_text.empty?
     flash.now[:errors] = ['You cannot submit an empty comment']
-    erb :'peeps/edit_peep'
+    erb :'comments/index'
   else
     @comment.update(text: params[:text])
     flash[:success] = 'Comment updated!'
-    redirect to('/comments/:id')
+    redirect to("/comments/#{@peep}")
   end
 end
 
