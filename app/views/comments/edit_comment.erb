@@ -1,0 +1,13 @@
+<h1>
+  Peeps
+</h1>
+
+<div>
+  <form action='/peeps/<%= @peep.id %>' method='post'>
+     <input type="hidden" name="_method" value="put">
+    peep message:
+    <textarea name="text"><%= @peep.text %></textarea>
+    <input name='user_id' type='hidden' value="<%= session[:user_id] %>">
+    <input type='submit' value='Submit Peep'>
+  </form>
+</div>

@@ -32,7 +32,7 @@
           </form>
           <div id="peep_text">
             Posted by: <%= peep.user.username %> (<%= peep.timestamp.strftime("%d/%m/%Y") %> at <%= peep.timestamp.strftime("%H:%M") %>)
-            <a href="/peeps/<%= peep.id %>/comments">comments</a>
+            <a href="/comments/<%= peep.id %>">comments</a>
           </div>
         </td>
       <% end %>

@@ -11,4 +11,6 @@ class Peep
 
   belongs_to :user
 
+  has n, :comments, through: Resource
+
 end

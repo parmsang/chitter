@@ -1,0 +1,43 @@
+<div id="chitter_header" >
+  <img width="50px" src="/images/logo.png">
+  <div
+    id="chitter_title">Chitter
+  </div>
+
+  <% if current_user %>
+    <div id="new_container">
+      <form action='/comments/<%= @peep.id %>' method='post'>
+        comment:
+        <textarea id="peep_text_area" name="text"></textarea>
+        <input name='user_id' type='hidden' value="<%= session[:user_id] %>">
+        <input id="peep_button" type='submit' value='Submit '>
+      </form>
+    </div>
+  <% end %>
+</div>
+
+<ul id="peeps">
+  <% @comments.reverse_each do |comment| %>
+    <% if comment.peep_id == @id %>
+      <li id="peep">
+      <div id="peep_text_main"><%= comment.text %><br></div>
+
+      <% if current_user == @peep.user %>
+        <td>
+          <form action="/comments/<%= comment.id %>" method="post">
+            <input name="_method" type="hidden" value="delete">
+            <input id="trash_icon" type="image" width="20px" src="/images/trash.png" value="Delete Peep">
+          </form>
+          <form action="/comments/<%= comment.id %>/edit" method="get">
+            <input id="edit_icon" type="image" width="20px" src="/images/edit.png" value="Edit Peep">
+          </form>
+          <div id="peep_text">
+            Comment by: <%= @peep.user.username %> (<%= @peep.timestamp.strftime("%d/%m/%Y") %> at <%= @peep.timestamp.strftime("%H:%M") %>)
+          </div>
+        </td>
+      <% end %>
+
+    </li>
+    <% end %>
+  <% end %>
+</ul>

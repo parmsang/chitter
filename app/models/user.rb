@@ -15,6 +15,7 @@ class User
   property :password_digest, Text
 
   has n, :peeps, through: Resource
+  has n, :comments, through: Resource
 
   def password=(password)
     @password = password
