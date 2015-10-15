@@ -111,63 +111,63 @@ class Chitter < Sinatra::Base
     redirect to('/peeps')
   end
 
-#comments
+  # comments
 
-get '/comments/:id/new' do
-  @peep = Peep.get(params[:id])
-  erb :'comments/new_comment'
-end
+  get '/comments/:id/new' do
+    @peep = Peep.get(params[:id])
+    erb :'comments/new_comment'
+  end
 
-get '/comments/:id' do
-  @comments = Comment.all
-  @id = "#{params[:id]}".to_i
-  @peep = Peep.get(@id)
-  erb :'comments/index'
-end
-
-post '/comments/:id' do
-  @comment = Comment.new(user_id: session[:user_id],
-                         peep_id: params[:id],
-                         text: params[:text],
-                         timestamp: Time.now)
-  if @comment != "" && !session[:user_id].nil?
-    @comment.save
-    redirect to("/comments/#{params[:id]}")
-  elsif @comment != ""
-    flash.now[:errors] = ['Please log in or register to make a comment']
-  else
-    flash.now[:errors] = @comment.errors.full_messages
+  get '/comments/:id' do
+    @comments = Comment.all
+    @id = "#{params[:id]}".to_i
+    @peep = Peep.get(@id)
     erb :'comments/index'
   end
-end
 
-get '/comments/:id/edit' do
-  @id = "#{params[:id]}".to_i
-  @comment = Comment.get(@id)
-  erb :'comments/edit_comment'
-end
+  post '/comments/:id' do
+    @comment = Comment.new(user_id: session[:user_id],
+                           peep_id: params[:id],
+                           text: params[:text],
+                           timestamp: Time.now)
+    if @comment != "" && !session[:user_id].nil?
+      @comment.save
+      redirect to("/comments/#{params[:id]}")
+    elsif @comment != ""
+      flash.now[:errors] = ['Please log in or register to make a comment']
+    else
+      flash.now[:errors] = @comment.errors.full_messages
+      erb :'comments/index'
+    end
+  end
 
-put '/comments/:id/edit' do
-  @comment = Comment.get(params[:id])
-  @peep = @comment.peep_id
-  comment_text = params[:text]
-  if comment_text.empty?
-    flash.now[:errors] = ['You cannot submit an empty comment']
-    erb :'comments/index'
-  else
-    @comment.update(text: params[:text])
-    flash[:success] = 'Comment updated!'
+  get '/comments/:id/edit' do
+    @id = "#{params[:id]}".to_i
+    @comment = Comment.get(@id)
+    erb :'comments/edit_comment'
+  end
+
+  put '/comments/:id/edit' do
+    @comment = Comment.get(params[:id])
+    @peep = @comment.peep_id
+    comment_text = params[:text]
+    if comment_text.empty?
+      flash.now[:errors] = ['You cannot submit an empty comment']
+      erb :'comments/index'
+    else
+      @comment.update(text: params[:text])
+      flash[:success] = 'Comment updated!'
+      redirect to("/comments/#{@peep}")
+    end
+  end
+
+  delete '/comments/:id' do
+    @comment = Comment.get(params[:id])
+    @peep = @comment.peep_id
+    @comment.destroy
+    flash[:success] = 'Comment deleted!'
     redirect to("/comments/#{@peep}")
   end
-end
-
-delete '/comments/:id' do
-  @comment = Comment.get(params[:id])
-  @peep = @comment.peep_id
-  @comment.destroy
-  flash[:success] = 'Comment deleted!'
-  redirect to("/comments/#{@peep}")
-end
 
   # start the server if ruby file executed directly
   run! if app_file == $PROGRAM_NAME
