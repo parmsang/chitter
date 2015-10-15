@@ -4,7 +4,7 @@ feature 'Deleting comments' do
     user = create :user
   end
 
-  scenario 'can delete a comment when logged in to Chitter' do
+  scenario 'can delete a his/her comment when logged in to Chitter' do
     sign_in(email: user.email,   password: user.password)
     visit '/peeps'
     fill_in 'text', with: 'peep message'

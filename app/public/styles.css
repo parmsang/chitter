@@ -253,3 +253,17 @@ input:focus {
   outline: 0;
   display: inline-block;
 }
+
+#comments {
+  background-color: #75B0CF;
+  margin: 0px auto;
+  border-radius: 10px;
+  padding: 10px;
+  width: 70%;
+  max-width: 580px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: white;
+  opacity: .8;
+  overflow: hidden;
+}

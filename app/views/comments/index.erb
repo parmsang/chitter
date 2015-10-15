@@ -15,11 +15,27 @@
     </div>
   <% end %>
 </div>
+<br>
+Peep
+<ul id="peeps">
+  <li id="peep">
+    <div id="peep_text_main"><%= @peep.text %><br></div>
+    <% if current_user == @peep.user %>
+      <td>
+        <div id="peep_text">
+          Posted by: <%= @peep.user.username %> (<%= @peep.timestamp.strftime("%d/%m/%Y") %> at <%= @peep.timestamp.strftime("%H:%M") %>)
+        </div>
+      </td>
+    <% end %>
+  </li>
+</ul>
+
+Comments
 
 <ul id="peeps">
   <% @comments.reverse_each do |comment| %>
     <% if comment.peep_id == @id %>
-      <li id="peep">
+      <li id="comments">
       <div id="peep_text_main"><%= comment.text %><br></div>
 
       <% if current_user == @peep.user %>
