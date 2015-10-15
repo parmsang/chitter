@@ -1,4 +1,3 @@
-require 'rubocop/rake_task'
 require 'data_mapper'
 require_relative 'data_mapper_setup'
 
