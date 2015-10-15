@@ -162,10 +162,11 @@ put '/comments/:id/edit' do
 end
 
 delete '/comments/:id' do
-  @peep = Peep.get(params[:id])
-  @peep.destroy
-  flash[:success] = 'Peep deleted!'
-  redirect to('/comments/:id')
+  @comment = Comment.get(params[:id])
+  @peep = @comment.peep_id
+  @comment.destroy
+  flash[:success] = 'Comment deleted!'
+  redirect to("/comments/#{@peep}")
 end
 
   # start the server if ruby file executed directly
