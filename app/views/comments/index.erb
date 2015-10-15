@@ -1,9 +1,13 @@
-<div id="chitter_header" >
-  <img width="50px" src="/images/logo.png">
-  <div
-    id="chitter_title">Chitter
-  </div>
+<head>
+  <% if !current_user %>
+    <meta content="0; url=/" http-equiv="refresh"/>
+  <% end %>
+</head>
 
+<div id="chitter_header">
+  <img src="/images/logo.png" width="50px">
+  <div id="chitter_title">Chitter
+  </div>
   <% if current_user %>
     <div id="new_container">
       <form action='/comments/<%= @peep.id %>' method='post'>
@@ -20,40 +24,44 @@ Peep
 <ul id="peeps">
   <li id="peep">
     <div id="peep_text_main"><%= @peep.text %><br></div>
-    <% if current_user == @peep.user %>
+    <% if current_user %>
       <td>
         <div id="peep_text">
-          Posted by: <%= @peep.user.username %> (<%= @peep.timestamp.strftime("%d/%m/%Y") %> at <%= @peep.timestamp.strftime("%H:%M") %>)
+          Posted by:
+          <%= @peep.user.username %>
+          (<%= @peep.timestamp.strftime("%d/%m/%Y") %>
+          at
+          <%= @peep.timestamp.strftime("%H:%M") %>)
         </div>
       </td>
     <% end %>
   </li>
 </ul>
-
 Comments
-
 <ul id="peeps">
   <% @comments.reverse_each do |comment| %>
     <% if comment.peep_id == @id %>
       <li id="comments">
-      <div id="peep_text_main"><%= comment.text %><br></div>
-
-      <% if current_user == @peep.user %>
-        <td>
-          <form action="/comments/<%= comment.id %>" method="post">
-            <input name="_method" type="hidden" value="delete">
-            <input id="trash_icon" type="image" width="20px" src="/images/trash.png" value="Delete Peep">
-          </form>
-          <form action="/comments/<%= comment.id %>/edit" method="get">
-            <input id="edit_icon" type="image" width="20px" src="/images/edit.png" value="Edit Peep">
-          </form>
-          <div id="peep_text">
-            Comment by: <%= @peep.user.username %> (<%= @peep.timestamp.strftime("%d/%m/%Y") %> at <%= @peep.timestamp.strftime("%H:%M") %>)
-          </div>
-        </td>
-      <% end %>
-
-    </li>
+        <div id="peep_text_main"><%= comment.text %><br></div>
+        <% if current_user == comment.user %>
+          <td>
+            <form action="/comments/<%= comment.id %>" method="post">
+              <input name="_method" type="hidden" value="delete">
+              <input id="trash_icon" src="/images/trash.png" type="image" value="Delete Peep" width="20px">
+            </form>
+            <form action="/comments/<%= comment.id %>/edit" method="get">
+              <input id="edit_icon" src="/images/edit.png" type="image" value="Edit Peep" width="20px">
+            </form>
+            <div id="peep_text">
+              Comment by:
+              <%= @peep.user.username %>
+              (<%= @peep.timestamp.strftime("%d/%m/%Y") %>
+              at
+              <%= @peep.timestamp.strftime("%H:%M") %>)
+            </div>
+          </td>
+        <% end %>
+      </li>
     <% end %>
   <% end %>
 </ul>
