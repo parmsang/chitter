@@ -52,15 +52,15 @@ Comments
             <form action="/comments/<%= comment.id %>/edit" method="get">
               <input id="edit_icon" src="/images/edit.png" type="image" value="Edit Peep" width="20px">
             </form>
-            <div id="peep_text">
-              Comment by:
-              <%= comment.user.username %>
-              (<%= @peep.timestamp.strftime("%d/%m/%Y") %>
-              at
-              <%= @peep.timestamp.strftime("%H:%M") %>)
-            </div>
           </td>
         <% end %>
+        <div id="peep_text">
+          Comment by:
+          <%= comment.user.username %>
+          (<%= @peep.timestamp.strftime("%d/%m/%Y") %>
+          at
+          <%= @peep.timestamp.strftime("%H:%M") %>)
+        </div>
       </li>
     <% end %>
   <% end %>
