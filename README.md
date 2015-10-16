@@ -11,7 +11,7 @@ Screenshot
 -------
 ![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/public/images/screenshot-1.png)
 
-How to Use:
+How to Use
 -------
 
 ```
@@ -23,7 +23,7 @@ rackup
 
 Use Rspec to test it.
 
-Technologies Used:
+Technologies Used
 -------
 * Ruby
 * Sinatra
