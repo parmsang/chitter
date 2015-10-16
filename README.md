@@ -5,9 +5,11 @@ This is a little Twitter clone that will allow the users to sign in and post or 
 
 This was set as a challenge at Makers Academy (week 4 of the 12 week course). Details of the challenge can be found [here](https://github.com/makersacademy/chitter-challenge) - all requirements, including bonus challanges have been implemented.
 
+[Link](https://guarded-brushlands-8672.herokuapp.com/peeps) to site.
+
 Screenshot
 -------
-![alt text](https://github.com/ajitsy/websitetwo/blob/master/app/assets/images/agileventures.png)
+![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/assets/images/screenshot-1.png)
 
 How to Use:
 -------
@@ -31,3 +33,8 @@ Technologies Used:
 * Rspec
 * Factory Girl
 * BCrypt
+
+Addittional Screenshot
+
+![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/assets/images/screenshot-2.png)
+![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/assets/images/screenshot-2.png)
