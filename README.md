@@ -34,8 +34,8 @@ Technologies Used:
 * Factory Girl
 * BCrypt
 
-Addittional Screenshot
+Addittional Screenshots
 -------
 
-![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/public/images/screenshot-2.png)
+![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/public/images/screenshot-3.png)
 ![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/public/images/screenshot-2.png)
