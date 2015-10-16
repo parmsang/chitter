@@ -9,7 +9,7 @@ This was set as a challenge at Makers Academy (week 4 of the 12 week course). De
 
 Screenshot
 -------
-![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/assets/images/screenshot-1.png)
+![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/public/images/screenshot-1.png)
 
 How to Use:
 -------
@@ -35,6 +35,7 @@ Technologies Used:
 * BCrypt
 
 Addittional Screenshot
+-------
 
-![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/assets/images/screenshot-2.png)
-![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/assets/images/screenshot-2.png)
+![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/public/images/screenshot-2.png)
+![alt text](https://github.com/ajitsy/chitter-challenge/blob/master/app/public/images/screenshot-2.png)
