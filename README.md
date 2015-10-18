@@ -15,10 +15,10 @@ How to Use
 -------
 
 ```
-$ git clone https://github.com/ajitsy/chitter-challange
-$ cd WebsiteTwo
-bundle install
-rackup
+$ git clone https://github.com/ajitsy/chitter
+$ cd chitter
+$ bundle install
+$ rackup
 ```
 
 Use Rspec to test it.
