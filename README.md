@@ -1,7 +1,7 @@
 Chitter
 -------
 
-This is a little Twitter clone that will allow the users to sign in and post or comment to 'peeps' on a public stream.
+This is a little Twitter clone that will allow a user to register/sign-in and post a 'peep' and comment on other peoples peeps on a public stream.
 
 This was set as a challenge at Makers Academy (week 4 of the 12 week course). Details of the challenge can be found [here](https://github.com/makersacademy/chitter-challenge) - all requirements, including bonus challanges have been implemented.
 
